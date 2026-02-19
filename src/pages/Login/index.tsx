@@ -1,5 +1,8 @@
 import Logo from "@components/Logo";
 import LoginForm from "@components/LoginForm";
+import TextDivider from "@components/TextDivider";
+import { ButtonTypes } from "@utils/constants";
+import { Button } from "primereact/button";
 import { type ReactElement } from "react";
 import "./style.css";
 
@@ -10,13 +13,21 @@ const LoginPage = (): ReactElement => {
                 <div className="logo-wrapper">
                     <Logo />
                 </div>
-                <h2 className="login-title h-2-text">Login</h2>
-                <LoginForm />
+                <h1 className="login-title">Добро пожаловать!</h1>
+                <div className="login-subtitle description-text-secondary centered-text">
+                    Пожалуйста, авторизируйтесь
+                </div>
+                <div className="login-form-wrapper">
+                    <LoginForm />
+                </div>
+                <TextDivider text="или" />
                 <p className="login-footer card-section-value">
-                    Don’t have an account?{" "}
-                    <button className={`block-caption-primary-text`}>
-                        Register
-                    </button>
+                    <span className="caption-text-thin">{`Нет аккаунта?`}</span>
+                    <Button
+                        className={`block-caption-primary-text ${ButtonTypes.GHOST}`}
+                    >
+                        Создать
+                    </Button>
                 </p>
             </div>
         </div>

@@ -23,7 +23,11 @@ const FormField = ({
 }: IFormFieldProps): ReactElement => {
     return (
         <div className={`form-field ${className ?? ""}`} style={styles}>
-            {label && <span className="field-header-text">{label}</span>}
+            {label && (
+                <span className="field-header-text description-text">
+                    {label}
+                </span>
+            )}
             <div className="form-field-content">{children}</div>
         </div>
     );

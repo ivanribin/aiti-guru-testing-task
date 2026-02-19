@@ -37,3 +37,7 @@ export const DELAY_BEFORE_SEND_REQUEST: number = 1000;
 export const DELAY_REDIRECT_TO_HOME: number = 5000;
 
 export const FIRST_SHEET_MODAL_Z_INDEX = 2;
+
+export const enum ButtonTypes {
+    GHOST = "ghost",
+}

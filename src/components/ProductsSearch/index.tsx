@@ -32,13 +32,10 @@ const ProductsSearch = (): ReactElement => {
     return (
         <InputText
             value={search ?? ""}
-            // className={`form-field-input tertiary-text  ${InputClassnames.AUTHORIZATION}`}
             className={`form-field-input tertiary-text`}
             onChange={onSearchChange}
             placeholder="Найти"
             type="text"
-            // variant={TypesOfInput.PRIMARY}
-            // size={InputSizes.MEDIUM}
         />
     );
 };

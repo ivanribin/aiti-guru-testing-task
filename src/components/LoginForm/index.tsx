@@ -1,5 +1,5 @@
+import FormField from "@components/FormField";
 import useNotifications from "@hooks/useNotifications";
-import FormField, { FormFieldClassnames } from "@components/FormField";
 import { ChangeEvent, FormEvent, type ReactElement, useState } from "react";
 import type { TApplicationDispatch, TRootState } from "@store/index";
 import { Checkbox, CheckboxChangeEvent } from "primereact/checkbox";
@@ -83,33 +83,26 @@ const LoginForm = (): ReactElement => {
 
     return (
         <form className="username-form" onSubmit={handleSubmit}>
-            <FormField
-                className={`tertiary-text ${FormFieldClassnames.AUTHORIZATION}`}
-                label="Email or username"
-            >
+            <FormField label="Логин">
                 <InputText
                     value={formData.username ?? ""}
-                    className={`form-field-input tertiary-text`}
+                    className={`form-field-input form-input description-text`}
                     onChange={(event) =>
                         handleFormDataChange(event, "username")
                     }
-                    placeholder="Enter your email or username"
+                    placeholder="Введите свой логин"
                     type="text"
                     required
                 />
             </FormField>
-
-            <FormField
-                className={`tertiary-text ${FormFieldClassnames.AUTHORIZATION}`}
-                label="Password"
-            >
+            <FormField label="Пароль" styles={{ marginBottom: "1.2rem" }}>
                 <Password
                     value={formData.password ?? ""}
-                    className="form-field-input"
+                    className="form-field-input form-input"
                     onChange={(event) =>
                         handleFormDataChange(event, "password")
                     }
-                    placeholder="Enter your password"
+                    placeholder="Введите свой пароль"
                     required
                 />
             </FormField>
@@ -118,20 +111,23 @@ const LoginForm = (): ReactElement => {
                 style={{
                     display: "flex",
                     justifyContent: "start",
+                    alignItems: "center",
                     marginBottom: "2rem",
+                    gap: "0.5rem",
                 }}
             >
                 <Checkbox
                     checked={isRemember}
                     onChange={handleIsRememberChange}
                 />
+                <span className="caption-text">Запомнить данные</span>
             </div>
             <Button
-                className="tertiary-text"
-                label="Login"
+                label="Войти"
                 type="submit"
                 disabled={isSomeFieldEmpty}
                 loading={isUserDataLoading}
+                style={{ width: "100%" }}
             />
         </form>
     );
