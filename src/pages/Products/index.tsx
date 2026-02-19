@@ -5,9 +5,9 @@ import Paginator from "@components/Paginator";
 import ProductsTable from "@components/ProductsTable";
 import PaginationInfo from "@components/PaginationInfo";
 import ProductsPageHeader from "@components/ProductsPageHeader";
+import { ApiQueryParams, PRODUCTS_COUNT_ON_PAGE } from "@utils/constants";
 import { IProductsListData } from "@domains/Product";
 import { useMemo, type ReactElement } from "react";
-import { ApiQueryParams } from "@utils/constants";
 import { useSearchParams } from "react-router";
 import {
     ILoadProductsPayload,
@@ -18,8 +18,6 @@ import "./style.css";
 type TProductsSearchQueryData = Partial<
     Pick<ILoadProductsPayload, "q" | "withSearch">
 >;
-
-const PRODUCTS_COUNT_ON_PAGE: number = 15;
 
 const ProductsPage = (): ReactElement => {
     const [queryParams] = useSearchParams();

@@ -1,0 +1,124 @@
+.products-table-skeleton {
+    pointer-events: none;
+    user-select: none;
+}
+
+.products-table-skeleton .skeleton-header-cell {
+    height: 2.4rem;
+    background: linear-gradient(
+        90deg,
+        var(--secondary-background-color, #EDEDED) 25%,
+        #E0E0E0 50%,
+        var(--secondary-background-color, #EDEDED) 75%
+    );
+    background-size: 200% 100%;
+    animation: skeleton-loading 1.5s infinite;
+    border-radius: 0.4rem;
+}
+
+.products-table-skeleton .skeleton-cell {
+    padding: 1rem 0;
+    animation: skeleton-loading 1.5s infinite;
+}
+
+.products-table-skeleton .skeleton-cell-title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.products-table-skeleton .skeleton-thumbnail {
+    width: 4rem;
+    height: 4rem;
+    background: linear-gradient(
+        90deg,
+        var(--secondary-background-color, #EDEDED) 25%,
+        #E0E0E0 50%,
+        var(--secondary-background-color, #EDEDED) 75%
+    );
+    background-size: 200% 100%;
+    border-radius: 0.6rem;
+    flex-shrink: 0;
+}
+
+.products-table-skeleton .skeleton-text-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.products-table-skeleton .skeleton-text {
+    background: linear-gradient(
+        90deg,
+        var(--secondary-background-color, #EDEDED) 25%,
+        #E0E0E0 50%,
+        var(--secondary-background-color, #EDEDED) 75%
+    );
+    background-size: 200% 100%;
+    height: 1.6rem;
+    border-radius: 0.4rem;
+}
+
+.products-table-skeleton .skeleton-text-title {
+    width: 80%;
+    height: 1.8rem;
+}
+
+.products-table-skeleton .skeleton-text-category {
+    width: 60%;
+    height: 1.4rem;
+}
+
+.products-table-skeleton .skeleton-text-brand {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.products-table-skeleton .skeleton-text-sku {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.products-table-skeleton .skeleton-text-price {
+    width: 60%;
+    margin-left: auto;
+    height: 2rem;
+}
+
+.products-table-skeleton .skeleton-rating {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+}
+
+.products-table-skeleton .skeleton-star {
+    width: 1.6rem;
+    height: 1.6rem;
+    background: linear-gradient(
+        90deg,
+        var(--secondary-background-color, #EDEDED) 25%,
+        #E0E0E0 50%,
+        var(--secondary-background-color, #EDEDED) 75%
+    );
+    background-size: 200% 100%;
+    border-radius: 0.2rem;
+}
+
+@keyframes skeleton-loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+.products-table-skeleton .col-title,
+.products-table-skeleton .col-brand,
+.products-table-skeleton .col-sku,
+.products-table-skeleton .col-rating,
+.products-table-skeleton .col-price {
+    padding: 1rem 1.1rem;
+    vertical-align: middle;
+}
