@@ -1,0 +1,29 @@
+.products-table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+.col-title {
+    width: 35%;
+    text-align: start;
+}
+
+.col-brand {
+    width: 15%;
+    text-align: center;
+}
+
+.col-sku {
+    width: 15%;
+    text-align: center;
+}
+
+.col-rating {
+    width: 15%;
+    text-align: center;
+}
+
+.col-price {
+    width: 20%;
+    text-align: center;
+}

@@ -1,6 +1,4 @@
 .product-table-head-with-sort {
-    display: inline-flex;
-    align-items: center;
     gap: 0.5rem;
     cursor: pointer;
     padding: 0.5rem 0.75rem;

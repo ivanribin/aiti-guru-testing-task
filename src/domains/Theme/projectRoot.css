@@ -185,39 +185,3 @@ h2 {
     justify-content: center;
     align-items: center;
 }
-
-
-/* TABLE CLASS NAMES */
-.entities-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: var(--font-family-base);
-    font-size: var(--font-size-md);
-    background: var(--yellowed-white-bg-color);
-    overflow: hidden;
-}
-
-.entities-table thead tr.head-row th {
-    text-align: left;
-    padding: 1rem;
-    border-bottom: var(--border-s) solid var(--color-border-muted);
-    color: var(--color-text-darkened);
-    opacity: 0.7;
-}
-
-.entities-table tr {
-    position: relative;
-}
-
-.entities-table tr td {
-    padding: var(--space-sm);
-    height: var(--icon-size-4xl, 3rem);
-}
-
-.entities-table tbody tr:nth-child(odd) {
-    background-color:var(--light-yellow-bg-color) !important;
-}
-
-.entities-table tbody tr:nth-child(even) {
-    background-color: var(--yellowed-white-bg-color);
-}

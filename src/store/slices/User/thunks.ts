@@ -23,7 +23,7 @@ export const fetchUserSession = createAsyncThunk<IUser>(
             //     void
             // >("get", ApiEndpoints.FETCH_SESSION, undefined);
 
-            await delay(2000);
+            await delay(300);
 
             const response = {
                 id: 15,
@@ -57,7 +57,7 @@ export const signIn = createAsyncThunk<IUser, ISignInThunkParams>(
             //     ISignInUserCredentials
             // >("post", ApiEndpoints.LOGIN, credentials);
 
-            await delay(2000);
+            await delay(300);
 
             const response = {
                 id: 15,
