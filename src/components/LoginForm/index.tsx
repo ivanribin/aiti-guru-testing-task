@@ -1,10 +1,10 @@
 import FormField from "@components/FormField";
 import LockIcon from "@assets/icons/lock.svg?react";
+import Alert, { AlertTypes } from "@components/Alert";
 import useNotifications from "@hooks/useNotifications";
 import CustomPassword from "@components/CustomPassword";
 import InputWithTools from "@components/InputWithTools";
 import UserIcon from "@assets/icons/user-icon.svg?react";
-import { ChangeEvent, FormEvent, type ReactElement, useState } from "react";
 import type { TApplicationDispatch, TRootState } from "@store/index";
 import { Checkbox, CheckboxChangeEvent } from "primereact/checkbox";
 import { setIsUserDataLoading } from "@store/slices/User";
@@ -12,10 +12,16 @@ import { useDispatch, useSelector } from "react-redux";
 import { ISignInUserCredentials } from "@domains/User";
 import { signIn } from "@store/slices/User/thunks";
 import { AlertMessages } from "@utils/constants";
-import { AlertTypes } from "@components/Alert";
 import { useNavigate } from "react-router";
 import { Button } from "primereact/button";
 import { paths } from "@router/routes";
+import {
+    ChangeEvent,
+    FormEvent,
+    type ReactElement,
+    useEffect,
+    useState,
+} from "react";
 import "./style.css";
 
 const LoginForm = (): ReactElement => {
@@ -33,6 +39,8 @@ const LoginForm = (): ReactElement => {
     const { createAlert } = useNotifications();
 
     const [isRemember, setIsRemember] = useState<boolean>(true);
+
+    const [error, setError] = useState<string>("");
 
     const handleSubmit = async (event: FormEvent): Promise<void> => {
         event.preventDefault();
@@ -56,10 +64,7 @@ const LoginForm = (): ReactElement => {
         } catch (error: unknown) {
             const message = error as string;
 
-            createAlert({
-                message,
-                type: AlertTypes.ERROR,
-            });
+            setError(message);
         } finally {
             dispatch(setIsUserDataLoading(false));
         }
@@ -78,6 +83,14 @@ const LoginForm = (): ReactElement => {
     const handleIsRememberChange = (event: CheckboxChangeEvent): void => {
         setIsRemember(event.checked!);
     };
+
+    useEffect(() => {
+        if (!error) {
+            return;
+        }
+
+        setError("");
+    }, [formData, error]);
 
     const isSomeFieldEmpty: boolean = Object.values(formData).some(
         (value: string) => value === "",
@@ -112,6 +125,7 @@ const LoginForm = (): ReactElement => {
                     required
                 />
             </FormField>
+            {error && <Alert type={AlertTypes.ERROR} message={error} />}
             <div
                 className="form-row"
                 style={{
