@@ -1,28 +1,4 @@
-import type { IUserSession } from "@domains/User";
 import { AxiosError } from "axios";
-
-export interface IServerTokens {
-    accessToken: string;
-    refreshToken: string;
-}
-
-export interface IDefaultServerResponse {
-    ok: boolean;
-    message: string;
-}
-
-export interface IServerAuthorizationResponse {
-    tokens: IServerTokens;
-    meta: IUserSession;
-}
-
-export interface IServerDataResponse<T> {
-    meta: T;
-}
-
-export interface ITokensServerResponse {
-    tokens: IServerTokens;
-}
 
 export interface IServerError {
     message: string;
