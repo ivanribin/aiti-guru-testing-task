@@ -103,17 +103,18 @@ const CreateProductForm = ({
 
     return (
         <div className="create-event-form">
-            <h1 className="centered-text">Create Event</h1>
+            <h2 className="centered-text">Добавить товар</h2>
             <form
                 className="entity-form"
                 onChange={handleFormChange}
                 onSubmit={handleSubmit}
             >
-                <div className="fields">
+                <div className="fields" style={{ marginBottom: "1.25rem" }}>
                     <div className="field-wrapper">
                         <FormField label={"Введите название"}>
                             <InputText
                                 type="text"
+                                className="form-input"
                                 value={fieldsValues?.title ?? ""}
                                 name={"title"}
                                 placeholder="Введите название"
@@ -124,6 +125,7 @@ const CreateProductForm = ({
                         <FormField label={"Введите цену"}>
                             <NumberInput
                                 type="text"
+                                className="form-input"
                                 value={fieldsValues?.price ?? 0}
                                 onChange={(newPrice: number) =>
                                     updateFieldData("price", String(newPrice))
@@ -139,6 +141,7 @@ const CreateProductForm = ({
                         <FormField label={"Введите вендор"}>
                             <InputText
                                 type="text"
+                                className="form-input"
                                 value={fieldsValues?.brand ?? ""}
                                 name={"brand"}
                                 placeholder="Введите вендор"
@@ -149,6 +152,7 @@ const CreateProductForm = ({
                         <FormField label={"Введите артикул"}>
                             <InputText
                                 type="text"
+                                className="form-input"
                                 value={fieldsValues?.sku ?? ""}
                                 name={"sku"}
                                 placeholder="Введите артикул"
@@ -158,6 +162,7 @@ const CreateProductForm = ({
                 </div>
                 <Button
                     label="Добавить товар"
+                    style={{ width: "100%" }}
                     type="submit"
                     disabled={!isValid}
                     loading={isSending}

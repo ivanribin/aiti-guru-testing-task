@@ -36,6 +36,11 @@ body {
     height: 1.5rem;
 }
 
+.label-icon {
+    width: 0.75rem;
+    height: 0.75rem;
+}
+
 .page {
     background-color: #FFFFFF;
     padding: 2rem;

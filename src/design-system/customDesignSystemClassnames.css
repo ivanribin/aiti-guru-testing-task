@@ -63,6 +63,11 @@
     cursor: pointer;
 }
 
+.design-system-button:disabled {
+    filter: brightness(0.8);
+    cursor: not-allowed;
+}
+
 .design-system-button.link {
     background-color: transparent;
     color: var(--primary-color, #242EDB);
@@ -88,7 +93,7 @@
 .design-system-progressspinner {
     width: 2.5rem;
     height: 2.5rem;
-    animation: spinner-rotate 1s linear infinite;
+    animation: spin 1s linear infinite;
 }
 
 .design-system-progressspinner-spinner {
@@ -101,7 +106,12 @@
     stroke-width: 0.125rem;
     stroke-linecap: round;
     fill: transparent;
-    stroke-dasharray: 3rem;
+    stroke-dasharray: 4rem;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 
 @keyframes spinner-rotate {

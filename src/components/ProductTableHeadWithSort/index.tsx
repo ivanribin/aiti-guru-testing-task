@@ -14,8 +14,8 @@ export interface IProductTableHeadWithSortProps {
 }
 
 const sortOrderIcons: Record<SortOrders, ReactNode> = {
-    [SortOrders.ASCENDING]: <AscendingIcon className="action-icon" />,
-    [SortOrders.DESCENDING]: <DescendingIcon className="action-icon" />,
+    [SortOrders.ASCENDING]: <AscendingIcon className="label-icon" />,
+    [SortOrders.DESCENDING]: <DescendingIcon className="label-icon" />,
 };
 
 const ProductTableHeadWithSort = ({

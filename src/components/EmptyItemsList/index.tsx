@@ -20,8 +20,10 @@ const EmptyItemsList = ({
             </div>
 
             <div className="empty-list-info">
-                <h1 className="empty-list-title bold-text">{title}</h1>
-                <span className="empty-list-description">{description}</span>
+                <h2 className="empty-list-title">{title}</h2>
+                <span className="empty-list-description description-text-secondary-thin">
+                    {description}
+                </span>
             </div>
         </div>
     );

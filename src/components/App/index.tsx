@@ -7,7 +7,6 @@ import { BrowserRouter } from "react-router";
 import { type ReactElement } from "react";
 import { useSelector } from "react-redux";
 import "@design-system/customDesignSystemClassnames.css";
-import "@domains/Theme/designSystemRoot.css";
 import "@domains/Theme/projectRoot.css";
 import "@domains/Theme/typographic.css";
 

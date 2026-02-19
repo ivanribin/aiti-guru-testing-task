@@ -6,8 +6,8 @@ import useProductsSorting from "@hooks/useProductsSorting";
 import errorIcon from "@assets/icons/search-error.svg?react";
 import ProductsTableSkeleton from "@components/ProductsTableSkeleton";
 import ProductTableHeadWithSort from "@components/ProductTableHeadWithSort";
-import { CSSProperties, ReactElement } from "react";
 import { IProduct } from "@domains/Product";
+import { ReactElement } from "react";
 import "./style.css";
 
 export interface IProductsTableProps {
@@ -16,7 +16,6 @@ export interface IProductsTableProps {
     error?: Error | undefined;
     reset: () => void;
     products: IProduct[] | undefined;
-    style?: CSSProperties;
 }
 
 const ProductsTable = ({
@@ -25,7 +24,6 @@ const ProductsTable = ({
     error,
     reset,
     products,
-    style,
 }: IProductsTableProps): ReactElement => {
     const sortedProducts = useProductsSorting(products);
 
