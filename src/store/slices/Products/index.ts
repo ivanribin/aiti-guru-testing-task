@@ -28,7 +28,7 @@ const ProductsSlice: Slice<IProductsSliceState> = createSlice({
     initialState,
     reducers: {
         updateSort: (state, action: PayloadAction<keyof IProduct>) => {
-            if (!state.category) {
+            if (!state.category || action.payload !== state.category) {
                 state.category = action.payload;
                 state.sortOrder = sortOrders[0];
 

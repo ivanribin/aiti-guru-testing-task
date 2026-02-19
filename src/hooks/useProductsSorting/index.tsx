@@ -18,15 +18,12 @@ const useProductsSorting = (products: IProduct[] | undefined) => {
             const valueA = a[category];
             const valueB = b[category];
 
-            if (valueA < valueB) {
-                return sortOrder === SortOrders.ASCENDING ? -1 : 1;
-            }
+            const compareResult =
+                valueA < valueB ? -1 : valueA > valueB ? 1 : 0;
 
-            if (valueA > valueB) {
-                return sortOrder === SortOrders.DESCENDING ? 1 : -1;
-            }
-
-            return 0;
+            return sortOrder === SortOrders.ASCENDING
+                ? compareResult
+                : -compareResult;
         });
     }, [products, category, sortOrder]);
 

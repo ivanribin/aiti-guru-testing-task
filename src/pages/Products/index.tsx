@@ -5,8 +5,8 @@ import Paginator from "@components/Paginator";
 import ProductsTable from "@components/ProductsTable";
 import PaginationInfo from "@components/PaginationInfo";
 import ProductsPageHeader from "@components/ProductsPageHeader";
-import { IProductsListData } from "@domains/Product";
 import { Fragment, useMemo, type ReactElement } from "react";
+import { IProductsListData } from "@domains/Product";
 import { ApiQueryParams } from "@utils/constants";
 import { useSearchParams } from "react-router";
 import {
@@ -18,7 +18,7 @@ type TProductsSearchQueryData = Partial<
     Pick<ILoadProductsPayload, "q" | "withSearch">
 >;
 
-const PRODUCTS_COUNT_ON_PAGE: number = 7;
+const PRODUCTS_COUNT_ON_PAGE: number = 20;
 
 const ProductsPage = (): ReactElement => {
     const [queryParams] = useSearchParams();
@@ -43,6 +43,7 @@ const ProductsPage = (): ReactElement => {
         error,
         refetch,
         selectPackNumber,
+        packsCount,
         total,
         selectedPackNumber,
     } = usePaginationQuery<
@@ -74,7 +75,7 @@ const ProductsPage = (): ReactElement => {
                     <Paginator
                         selectedPack={selectedPackNumber}
                         setPack={selectPackNumber}
-                        total={total}
+                        total={packsCount}
                     />
                 </Fragment>
             )}
