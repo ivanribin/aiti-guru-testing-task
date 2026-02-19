@@ -5,6 +5,7 @@ import useNotifications from "@hooks/useNotifications";
 import CustomPassword from "@components/CustomPassword";
 import InputWithTools from "@components/InputWithTools";
 import UserIcon from "@assets/icons/user-icon.svg?react";
+import { ChangeEvent, FormEvent, type ReactElement, useState } from "react";
 import type { TApplicationDispatch, TRootState } from "@store/index";
 import { Checkbox, CheckboxChangeEvent } from "primereact/checkbox";
 import { setIsUserDataLoading } from "@store/slices/User";
@@ -15,13 +16,6 @@ import { AlertMessages } from "@utils/constants";
 import { useNavigate } from "react-router";
 import { Button } from "primereact/button";
 import { paths } from "@router/routes";
-import {
-    ChangeEvent,
-    FormEvent,
-    type ReactElement,
-    useEffect,
-    useState,
-} from "react";
 import "./style.css";
 
 const LoginForm = (): ReactElement => {
@@ -78,19 +72,17 @@ const LoginForm = (): ReactElement => {
             ...prevData,
             [fieldName]: event.target.value,
         }));
-    };
 
-    const handleIsRememberChange = (event: CheckboxChangeEvent): void => {
-        setIsRemember(event.checked!);
-    };
-
-    useEffect(() => {
         if (!error) {
             return;
         }
 
         setError("");
-    }, [formData, error]);
+    };
+
+    const handleIsRememberChange = (event: CheckboxChangeEvent): void => {
+        setIsRemember(event.checked!);
+    };
 
     const isSomeFieldEmpty: boolean = Object.values(formData).some(
         (value: string) => value === "",
