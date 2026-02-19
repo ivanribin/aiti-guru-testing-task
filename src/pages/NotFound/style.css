@@ -1,0 +1,27 @@
+.not-found-page-block {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-text-on-accent);
+}
+
+.not-found-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-lg);
+    text-align: center;
+    padding: var(--space-3xl);
+    max-width: var(--ui-element-medium-width);
+    width: 100%;
+}
+.not-found-page-header {
+    text-align: center;
+    margin: 0;
+}

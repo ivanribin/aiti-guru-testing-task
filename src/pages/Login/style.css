@@ -1,0 +1,35 @@
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--light-text-color);
+    height: 100%;
+}
+
+.logo-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--icon-size-4xl);
+}
+
+.login {
+    width: 90%;
+    margin: 0 auto;
+    padding: var(--space-lg) var(--space-3xl, 2rem) var(--space-3xl, 2rem) var(--space-3xl, 2rem);
+}
+
+.login-title {
+    text-align: start;
+    margin-bottom: var(--space-3xl);
+}
+
+.login-footer {
+    color: var(--dark-text-color) !important;
+    font-weight: 600;
+    text-align: center;
+    margin-top: var(--space-xl, 1.25rem);
+    white-space: nowrap;
+}

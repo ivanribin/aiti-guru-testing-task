@@ -1,0 +1,31 @@
+.timer-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-xs);
+    padding: var(--space-s) var(--space-md);
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-md);
+    border-radius: var(--radius-md);
+    border: none;
+    cursor: pointer;
+    transition: background-color var(--transition-fast), color var(--transition-fast);
+    background-color: var(--color-surface-accent);
+    color: var(--color-text-on-accent);
+}
+
+.timer-button:disabled {
+    background-color: var(--color-surface-muted);
+    color: var(--color-text-secondary);
+    cursor: not-allowed;
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+.timer-button .number {
+    font-weight: var(--font-weight-bold);
+}
+
+.timer-button .title {
+    font-size: var(--font-size-sm);
+}

@@ -1,0 +1,31 @@
+.alerts-holder {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 0.5rem;
+    z-index: 50;
+}
+
+.alerts-holder::-webkit-scrollbar {
+    display: none;
+}
+
+.alert-wrapper {
+    width: 90%;
+    animation: topSlideUp .35s forwards;
+}
+
+@keyframes topSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(-2rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
