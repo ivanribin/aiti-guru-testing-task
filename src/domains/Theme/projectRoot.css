@@ -1,88 +1,30 @@
 :root {
-    --color-overlay-background: rgba(0, 0, 0, 0.5);
-    --shadow-hover: 0 0.063rem 0.5rem rgba(0, 0, 0, 0.15);
-    --shadow-hover-2: 0 0.4rem 0.75rem rgba(0, 0, 0, 0.15);
-    --light-text-color: #fafafa;
-    --dark-text-color: #222222;
-    --blured-text-color: #2222224d;
-    --blue-background-color: #0c8ce9;
-    --grey-background-color: #dadada;
-    --blured-background-color: #f4f4f4;
-    --darkened-border: #4d4d4d;
-    --divider-color: #d9d9d9;
+    --common-text-color: #232323;
+    --secondary-text-color: #E0E0E0;
+    --caption-text-color: #9C9C9C;
 
-    --radius-card: 3rem;
+    --secondary-background-color: #EDEDED;
 
-    --ui-element-xxxsmall-width: 3rem;
-    --ui-element-xxsmall-width: 5rem;
-    --ui-element-xsmall-width: 8rem;
-    --ui-element-small-width: 9rem;
-    --ui-element-pre-medium-width: 21rem;
-    --ui-element-medium-width: 31.25rem;
-    --ui-element-medium-height: 10rem;
-    --ui-element-large-width: 15rem;
-    --ui-element-xl-width: 20rem;
-    --ui-form-list-height: 15rem;
-    --ui-list-height: 50vh;
+    --primary-color: #242EDB;
+    --primary-border-color: #367AFF;
 
-    --layout-header-height: 10vh;
-    --layout-app-version-header-height: 2.5vh;
-    --layout-app-version-header-padding-right: 2.5vw;
-    --content-bottom: 18vh;
-    --layout-content-height: 85vh;
-    --layout-content-padding-top: 12.5vh;
-    --bottom-sheet-content-height: 95vh;
+    --main-background-color: #F6F6F6;
+}
 
-    --modal-bottom-padding: 9rem;
-
-    --modal-border-radius: 2rem;
-
-    --form-content-bottom: 4rem;
-
-    --font-size-largest: 3rem;
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
 html,
 body {
     overscroll-behavior: none;
+    background-color: #F6F6F6;
 }
 
-h1 {
-    font-size: var(--font-size-mx);
-    font-weight: 700;
-    color: var(--color-text-inverse);
-}
-
-h2 {
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: var(--color-text-inverse);
-}
-
-.primary-text {
-    color: var(--color-text-on-surface);
-    font-family: Times New Roman, Times, serif;
-    font-size: 1rem;
-}
-
-.h-2-text {
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: var(--color-text-inverse);
-}
-
-.caption-text {
-    font-family: "Times New Roman", Times, serif;
-    font-size: 0.9rem;
-    color: #333;
-}
-
-.page {
-    padding-top: var(--space-sl, 0.6rem);
-    padding-left: var(--space-lg, 1rem);
-    padding-right: var(--space-lg, 1rem);
-    padding-bottom: var(--content-bottom, 15vh);
-    height: 100%;
+.form-input {
+    width: 100%;
 }
 
 .action-icon {

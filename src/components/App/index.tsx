@@ -1,10 +1,12 @@
 import ApplicationRoutes from "@router/index";
 import AlertsHolder from "@components/AlertsHolder";
 import FullScreenLoader from "@components/FullScreenLoader";
+import DesignSystemProvider from "@components/DesignSystemProvider";
 import { type TRootState } from "@store/index";
 import { BrowserRouter } from "react-router";
 import { type ReactElement } from "react";
 import { useSelector } from "react-redux";
+import "@design-system/customDesignSystemClassnames.css";
 import "@domains/Theme/designSystemRoot.css";
 import "@domains/Theme/projectRoot.css";
 import "@domains/Theme/typographic.css";
@@ -16,7 +18,9 @@ const App = (): ReactElement => {
 
     return (
         <BrowserRouter>
-            <ApplicationRoutes />
+            <DesignSystemProvider>
+                <ApplicationRoutes />
+            </DesignSystemProvider>
             <AlertsHolder />
             {isLoading && <FullScreenLoader />}
         </BrowserRouter>
