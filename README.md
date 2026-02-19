@@ -1,73 +1,91 @@
-# React + TypeScript + Vite
+# Products Management Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based administrative interface for managing products with authentication, sorting, and CRUD operations.
 
-Currently, two official plugins are available:
+## Technologies Used
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React 18+
+- TypeScript
+- PrimeReact for UI components
+- React Hook Form for form handling
+- React Router DOM for navigation
+- CSS Modules for styling
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Authentication
 
-## Expanding the ESLint configuration
+- Login form with field validation
+- Error handling with API error messages
+- Session persistence option (remember me)
+- Token-based authentication
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Products Table
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Fetches data from DummyJSON API
+- Loading skeleton and progress indicators
+- Sortable columns (price, rating, etc.)
+- Visual indicators for low-rated products (rating < 3 highlighted in red)
+- Responsive table layout with fixed columns
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Product Management
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- Add new products via modal form
+- Form fields: title, price, brand, SKU
+- Success toast notifications
+- Search functionality using API
+
+## Installation
+
+Clone the repository and install dependencies:
+
+```bash
+git clone <https://github.com/ivanribin/aiti-guru-testing-task.git>
+cd aiti-guru-testing-task
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Configuration
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Create a `.env` file in the root (optional):
+
+### Copy the environment template file:
+
+```bash
+cp .env.example .env
 ```
+
+Fill in the required environment variables in the newly created .env file
+
+---
+
+## Available NPM Scripts
+
+| Script            | Description                                 |
+| ----------------- | ------------------------------------------- |
+| `npm run dev`     | Start in development mode                   |
+| `npm run build`   | Compile TypeScript to JavaScript in `dist/` |
+| `npm run preview` | Run compiled app from `dist/`               |
+
+---
+
+## Running the Project
+
+**Development:**
+
+```bash
+npm run dev
+```
+
+**Production:**
+
+```bash
+npm run build
+npm run preview
+```
+
+By default, the server runs on:  
+`http://localhost:5173` in development mode
+`http://localhost:4173` in production mode

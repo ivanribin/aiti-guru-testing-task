@@ -1,5 +1,5 @@
 import { createSlice, type PayloadAction, type Slice } from "@reduxjs/toolkit";
-import { AlertTypes } from "serbitone-design-system-themed";
+import { AlertTypes } from "@components/Alert";
 
 export type TAlert = {
     id: string;
@@ -34,7 +34,7 @@ export const notificationSlice: Slice<INotificationsSlice> = createSlice({
             const currentAlertList: TAlert[] = [...state.alerts];
 
             const alertToDelete: TAlertToDelete = currentAlertList.find(
-                (alert: TAlert) => alert.id === action.payload
+                (alert: TAlert) => alert.id === action.payload,
             );
 
             if (!alertToDelete) {

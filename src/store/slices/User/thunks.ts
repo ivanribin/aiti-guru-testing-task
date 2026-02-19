@@ -1,12 +1,12 @@
-import API from "@api/index";
+// import API from "@api/index";
 import ServerResponseParser from "@services/ServerResponseParser";
 import { authTokenStore } from "@services/AuthTokensStore";
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { ApiEndpoints } from "@utils/constants";
+// import { ApiEndpoints } from "@utils/constants";
 import type {
     ISignInUserCredentials,
     IUser,
-    IUserSession,
+    // IUserSession,
 } from "@domains/User";
 import { delay } from "@utils/handlers";
 
@@ -50,7 +50,7 @@ export const fetchUserSession = createAsyncThunk<IUser>(
 
 export const signIn = createAsyncThunk<IUser, ISignInThunkParams>(
     "user/signIn",
-    async ({ isRemember, ...credentials }, { rejectWithValue }) => {
+    async ({ isRemember }, { rejectWithValue }) => {
         try {
             // const response = await API.apiRequest<
             //     IUserSession,
