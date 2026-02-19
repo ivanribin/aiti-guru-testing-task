@@ -1,4 +1,5 @@
 import { ReactElement } from "react";
+import "./style.css";
 
 export interface IPaginationInfoProps {
     selectedPack: number;
@@ -15,10 +16,14 @@ const PaginationInfo = ({
 
     return (
         <div className="pagination-info">
-            <span>{`Показано`}</span>
-            <span className="pagination-info-data">{packInfoLabel}</span>
-            <span>{`из`}</span>
-            <span className="pagination-info-data">{total}</span>
+            <span className="description-text-secondary-thin">{`Показано`}</span>
+            <span className="pagination-info-data description-text-thin">
+                {packInfoLabel}
+            </span>
+            <span className="description-text-secondary-thin">{`из`}</span>
+            <span className="pagination-info-data description-text-thin">
+                {total}
+            </span>
         </div>
     );
 };

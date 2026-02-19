@@ -1,4 +1,5 @@
 import LeftArrowIcon from "@assets/icons/arrow-left.svg?react";
+import { ButtonTypes } from "@utils/constants";
 import { ReactElement, useMemo } from "react";
 import { Button } from "primereact/button";
 import "./style.css";
@@ -51,24 +52,37 @@ const Paginator = ({
             <Button
                 onClick={() => setPack(selectedPack - 1)}
                 disabled={selectedPack === 1}
+                className={`${ButtonTypes.GHOST} arrow`}
             >
                 <LeftArrowIcon />
             </Button>
-            {pageNumbers.map((packNumber) => (
-                <Button
-                    key={packNumber}
-                    label={`${packNumber}`}
-                    onClick={() => setPack(packNumber)}
-                    style={{
-                        backgroundColor:
-                            packNumber === selectedPack ? "blue" : "white",
-                        color: packNumber === selectedPack ? "white" : "black",
-                    }}
-                />
-            ))}
+            <div className="pagination-numbers">
+                {pageNumbers.map((packNumber) => (
+                    <Button
+                        key={packNumber}
+                        label={`${packNumber}`}
+                        onClick={() => setPack(packNumber)}
+                        style={{
+                            backgroundColor:
+                                packNumber === selectedPack
+                                    ? "#242EDB"
+                                    : "transparent",
+                            color:
+                                packNumber === selectedPack
+                                    ? "white"
+                                    : "#9C9C9C",
+                            borderColor:
+                                packNumber === selectedPack
+                                    ? undefined
+                                    : "#9C9C9C",
+                        }}
+                    />
+                ))}
+            </div>
             <Button
                 onClick={() => setPack(selectedPack + 1)}
                 disabled={selectedPack === total}
+                className={`${ButtonTypes.GHOST} arrow`}
             >
                 <LeftArrowIcon style={{ transform: "rotate(180deg)" }} />
             </Button>

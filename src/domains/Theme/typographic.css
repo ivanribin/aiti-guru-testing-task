@@ -96,9 +96,18 @@ h3 {
     color: var(--common-text-color, #232323);
 }
 
-.description-text-thin-bold {
+.description-text-secondary-bold {
     font-family: "Inter";
     font-weight: 700;
+    letter-spacing: 0%;
+    line-height: 150%;
+    font-size: 1.1rem;
+    color: var(--caption-text-color, #9C9C9C);
+}
+
+.description-text-secondary-thin {
+    font-family: "Inter";
+    font-weight: 200;
     letter-spacing: 0%;
     line-height: 150%;
     font-size: 1.1rem;

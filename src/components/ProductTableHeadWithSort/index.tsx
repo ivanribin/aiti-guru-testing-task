@@ -42,7 +42,7 @@ const ProductTableHeadWithSort = ({
     return (
         <th
             onClick={onClick}
-            className={`product-table-head-with-sort description-text-thin-bold ${activeClassName} ${className}`}
+            className={`product-table-head-with-sort description-text-secondary-bold ${activeClassName} ${className}`}
         >
             <span className="head-label">{label}</span>
             {isActiveHead && sortOrder && (

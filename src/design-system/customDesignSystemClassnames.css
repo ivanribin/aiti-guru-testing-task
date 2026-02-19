@@ -63,7 +63,7 @@
     cursor: pointer;
 }
 
-.design-system-button.ghost {
+.design-system-button.link {
     background-color: transparent;
     color: var(--primary-color, #242EDB);
     border: none;
@@ -76,6 +76,13 @@
     background-color: transparent;
     color: var(--caption-text-color, #9C9C9C);
     border-color: var(--caption-text-color, #9C9C9C);
+}
+
+.design-system-button.ghost {
+    background-color: transparent;
+    color: var(--caption-text-color, #9C9C9C);
+    border: none;
+    padding: 0;
 }
 
 .design-system-progressspinner {
