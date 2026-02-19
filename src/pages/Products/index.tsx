@@ -4,6 +4,7 @@ import usePaginationQuery, {
 import Paginator from "@components/Paginator";
 import ProductsTable from "@components/ProductsTable";
 import PaginationInfo from "@components/PaginationInfo";
+import ProductsPageHeader from "@components/ProductsPageHeader";
 import { IProductsListData } from "@domains/Product";
 import { Fragment, useMemo, type ReactElement } from "react";
 import { ApiQueryParams } from "@utils/constants";
@@ -52,7 +53,10 @@ const ProductsPage = (): ReactElement => {
 
     return (
         <div className="products-page">
-            <h2>Все позиции</h2>
+            <ProductsPageHeader
+                refetchProducts={refetch}
+                isLoading={isLoading || isFetching}
+            />
             <ProductsTable
                 products={loadedProducts?.products}
                 isLoading={isLoading}
