@@ -1,6 +1,8 @@
-import { sortOrdersLabels, updateSort } from "@store/slices/Products";
+import AscendingIcon from "@assets/icons/ascending.svg?react";
+import DescendingIcon from "@assets/icons/descending.svg?react";
+import { SortOrders, updateSort } from "@store/slices/Products";
 import { useDispatch, useSelector } from "react-redux";
-import { ReactElement, MouseEvent } from "react";
+import { ReactElement, MouseEvent, ReactNode } from "react";
 import { IProduct } from "@domains/Product";
 import { TRootState } from "@store/index";
 import "./style.css";
@@ -10,6 +12,11 @@ export interface IProductTableHeadWithSortProps {
     label: string;
     className?: string;
 }
+
+const sortOrderIcons: Record<SortOrders, ReactNode> = {
+    [SortOrders.ASCENDING]: <AscendingIcon className="action-icon" />,
+    [SortOrders.DESCENDING]: <DescendingIcon className="action-icon" />,
+};
 
 const ProductTableHeadWithSort = ({
     category,
@@ -35,11 +42,13 @@ const ProductTableHeadWithSort = ({
     return (
         <th
             onClick={onClick}
-            className={`product-table-head-with-sort ${activeClassName} ${className}`}
+            className={`product-table-head-with-sort caption-text-bold ${activeClassName} ${className}`}
         >
-            {label}
+            <span className="head-label">{label}</span>
             {isActiveHead && sortOrder && (
-                <div>{sortOrdersLabels[sortOrder]}</div>
+                <span className="sort-order-label">
+                    {sortOrderIcons[sortOrder]}
+                </span>
             )}
         </th>
     );

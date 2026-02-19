@@ -6,11 +6,6 @@ export enum SortOrders {
     DESCENDING = "descending",
 }
 
-export const sortOrdersLabels: Record<SortOrders, string> = {
-    [SortOrders.ASCENDING]: "acs",
-    [SortOrders.DESCENDING]: "desc",
-};
-
 interface IProductsSliceState {
     category: keyof IProduct | null;
     sortOrder: SortOrders | null;

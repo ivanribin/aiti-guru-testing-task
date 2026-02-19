@@ -17,13 +17,13 @@ const App = (): ReactElement => {
     );
 
     return (
-        <BrowserRouter>
-            <DesignSystemProvider>
+        <DesignSystemProvider>
+            <BrowserRouter>
                 <ApplicationRoutes />
-            </DesignSystemProvider>
-            <AlertsHolder />
-            {isLoading && <FullScreenLoader />}
-        </BrowserRouter>
+                <AlertsHolder />
+                {isLoading && <FullScreenLoader />}
+            </BrowserRouter>
+        </DesignSystemProvider>
     );
 };
 

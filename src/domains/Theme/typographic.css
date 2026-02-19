@@ -114,6 +114,15 @@ h3 {
     color: var(--caption-text-color, #9C9C9C);
 }
 
+.caption-text-bold {
+    font-family: "Inter";
+    font-weight: 700;
+    letter-spacing: 0%;
+    line-height: 150%;
+    font-size: 1rem;
+    color: var(--caption-text-color, #9C9C9C);
+}
+
 .caption-text-thin {
     font-family: "Inter";
     font-weight: 200;

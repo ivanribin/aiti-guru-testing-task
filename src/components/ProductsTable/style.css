@@ -3,6 +3,10 @@
     table-layout: fixed;
 }
 
+.products-table .head-row th {
+    padding: 1.5rem 1.1rem;
+}
+
 .col-title {
     width: 35%;
     text-align: start;

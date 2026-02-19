@@ -1,6 +1,7 @@
 import LeftArrowIcon from "@assets/icons/arrow-left.svg?react";
 import { ReactElement, useMemo } from "react";
 import { Button } from "primereact/button";
+import "./style.css";
 
 export interface IPaginatorProps {
     selectedPack: number;
