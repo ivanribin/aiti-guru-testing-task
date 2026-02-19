@@ -1,0 +1,17 @@
+.input-with-icon-wrapper {
+    position: relative;
+}
+
+.input-with-icon-wrapper .input-with-icon {
+    padding-left: 2.75rem;
+}
+
+.input-with-icon-wrapper .input-with-icon.with-right-tool {
+    padding-right: 2.75rem;
+}
+
+.input-with-icon-wrapper .input-icon {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+}

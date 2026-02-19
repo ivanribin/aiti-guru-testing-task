@@ -1,5 +1,9 @@
 import FormField from "@components/FormField";
+import LockIcon from "@assets/icons/lock.svg?react";
 import useNotifications from "@hooks/useNotifications";
+import CustomPassword from "@components/CustomPassword";
+import InputWithTools from "@components/InputWithTools";
+import UserIcon from "@assets/icons/user-icon.svg?react";
 import { ChangeEvent, FormEvent, type ReactElement, useState } from "react";
 import type { TApplicationDispatch, TRootState } from "@store/index";
 import { Checkbox, CheckboxChangeEvent } from "primereact/checkbox";
@@ -8,9 +12,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { ISignInUserCredentials } from "@domains/User";
 import { signIn } from "@store/slices/User/thunks";
 import { AlertMessages } from "@utils/constants";
-import { InputText } from "primereact/inputtext";
 import { AlertTypes } from "@components/Alert";
-import { Password } from "primereact/password";
 import { useNavigate } from "react-router";
 import { Button } from "primereact/button";
 import { paths } from "@router/routes";
@@ -84,25 +86,29 @@ const LoginForm = (): ReactElement => {
     return (
         <form className="username-form" onSubmit={handleSubmit}>
             <FormField label="Логин">
-                <InputText
+                <InputWithTools
+                    Icon={UserIcon}
                     value={formData.username ?? ""}
                     className={`form-field-input form-input description-text`}
-                    onChange={(event) =>
-                        handleFormDataChange(event, "username")
-                    }
+                    onChange={(newUsername) => {
+                        setFormData((prevData) => ({
+                            ...prevData,
+                            ["username"]: newUsername,
+                        }));
+                    }}
                     placeholder="Введите свой логин"
-                    type="text"
                     required
                 />
             </FormField>
             <FormField label="Пароль" styles={{ marginBottom: "1.2rem" }}>
-                <Password
+                <CustomPassword
                     value={formData.password ?? ""}
                     className="form-field-input form-input"
                     onChange={(event) =>
                         handleFormDataChange(event, "password")
                     }
                     placeholder="Введите свой пароль"
+                    Icon={LockIcon}
                     required
                 />
             </FormField>

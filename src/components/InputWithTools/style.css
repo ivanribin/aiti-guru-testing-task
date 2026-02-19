@@ -1,0 +1,15 @@
+.input-with-tools {
+    position: relative;
+}
+
+.input-with-tools .clear-icon {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    color: var(--secondary-background-color, #EDEDED);
+    transform: translateY(-50%);
+}
+
+.input-with-tools .clear-icon:hover {
+    cursor: pointer;
+}

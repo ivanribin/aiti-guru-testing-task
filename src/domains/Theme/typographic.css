@@ -19,6 +19,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: "Inter";
+    src: url('@assets/fonts/Inter/Inter-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
 .primary-text {
     color: var(--color-text-primary, #000000) !important;
     font-size: var(--font-size-md, 1rem) !important;
@@ -46,6 +53,24 @@ h1 {
     letter-spacing: -1.5%;
     line-height: 110%;
     font-size: 2.7rem;
+    color: var(--common-text-color, #232323);
+}
+
+h2 {
+    font-family: "Inter";
+    font-weight: 700;
+    letter-spacing: -1.5%;
+    line-height: 110%;
+    font-size: 2rem;
+    color: var(--common-text-color, #232323);
+}
+
+h3 {
+    font-family: "Inter";
+    font-weight: 700;
+    letter-spacing: -1.5%;
+    line-height: 110%;
+    font-size: 1.7rem;
     color: var(--common-text-color, #232323);
 }
 

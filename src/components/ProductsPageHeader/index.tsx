@@ -2,6 +2,7 @@ import ReloadIcon from "@assets/icons/reload.svg?react";
 import AddProductButton from "@components/AddProductButton";
 import { ReactElement, MouseEvent } from "react";
 import { Button } from "primereact/button";
+import "./style.css";
 
 export interface IProductsPageHeaderProps {
     refetchProducts: () => void;
@@ -20,7 +21,7 @@ const ProductsPageHeader = ({
 
     return (
         <div className="products-page-header">
-            <h2>Все позиции</h2>
+            <h3>Все позиции</h3>
             <Button onClick={onReload} loading={isLoading}>
                 <ReloadIcon className="action-icon" />
             </Button>
