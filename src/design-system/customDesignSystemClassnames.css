@@ -8,6 +8,15 @@
     box-shadow: none !important;
 }
 
+.design-system-input.secondary {
+    background-color: var(--input-secondary-background-color, #F3F3F3);
+    padding: 0.9rem 1rem;
+    border: none;
+    outline: none;
+    background-image: none !important;
+    box-shadow: none !important;
+}
+
 .design-system-password-root {
     padding: 0;
 }
@@ -44,6 +53,10 @@
     border: 0.1rem solid var(--primary-border-color, #367AFF);
     border-radius: 0.75rem;
     padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .design-system-button:hover {

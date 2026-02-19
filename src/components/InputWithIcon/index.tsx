@@ -19,7 +19,9 @@ const InputWithIcon = ({
 
     return (
         <div className="input-with-icon-wrapper">
-            <Icon className="action-icon input-icon" />
+            <div>
+                <Icon className="action-icon input-icon" />
+            </div>
             <InputText {...restProps} className={inputClassname} />
         </div>
     );

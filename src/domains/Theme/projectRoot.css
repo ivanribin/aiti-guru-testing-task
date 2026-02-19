@@ -4,6 +4,7 @@
     --caption-text-color: #9C9C9C;
 
     --secondary-background-color: #EDEDED;
+    --input-secondary-background-color: #F3F3F3;
 
     --primary-color: #242EDB;
     --primary-border-color: #367AFF;
@@ -15,6 +16,8 @@
 *::before,
 *::after {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 html,

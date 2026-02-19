@@ -5,10 +5,7 @@ import { TSvgComponent } from "@app-types/svgComponent";
 import { ReactElement, ChangeEvent } from "react";
 import "./style.css";
 
-export interface IInputWithToolsProps extends Omit<
-    InputTextProps,
-    "type" | "onChange"
-> {
+export interface IInputWithToolsProps extends Omit<InputTextProps, "onChange"> {
     Icon?: TSvgComponent;
     onChange: (newQuery: string) => void;
 }
@@ -44,7 +41,7 @@ const InputWithTools = ({
                     {...otherProps}
                 />
             )}
-            <CrossIcon onClick={onClear} className="clear-icon action-icon" />
+            <CrossIcon onClick={onClear} className="clear-icon" />
         </div>
     );
 };

@@ -6,7 +6,6 @@
     position: absolute;
     top: 50%;
     right: 1rem;
-    color: var(--secondary-background-color, #EDEDED);
     transform: translateY(-50%);
 }
 

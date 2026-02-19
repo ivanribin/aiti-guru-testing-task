@@ -1,10 +1,15 @@
+import InputWithTools, {
+    IInputWithToolsProps,
+} from "@components/InputWithTools";
 import useDebounce from "@hooks/useDebounce";
-import { ChangeEvent, ReactElement, useState } from "react";
+import SearchIcon from "@assets/icons/search.svg?react";
 import { ApiQueryParams } from "@utils/constants";
-import { InputText } from "primereact/inputtext";
+import { ReactElement, useState } from "react";
 import { useSearchParams } from "react-router";
 
-const ProductsSearch = (): ReactElement => {
+const ProductsSearch = ({
+    ...props
+}: Omit<IInputWithToolsProps, "onChange" | "value">): ReactElement => {
     const [params, setParams] = useSearchParams();
 
     const [search, setSearch] = useState<string>("");
@@ -21,21 +26,19 @@ const ProductsSearch = (): ReactElement => {
 
     const runDebounced = useDebounce(updateSearchQueryParam, 500);
 
-    const onSearchChange = (event: ChangeEvent<HTMLInputElement>): void => {
-        event.stopPropagation();
+    const onSearchChange = (newSearch: string): void => {
+        setSearch(newSearch);
 
-        setSearch(event.target.value);
-
-        runDebounced(event.target.value);
+        runDebounced(newSearch);
     };
 
     return (
-        <InputText
+        <InputWithTools
+            Icon={SearchIcon}
             value={search ?? ""}
-            className={`form-field-input tertiary-text`}
             onChange={onSearchChange}
             placeholder="Найти"
-            type="text"
+            {...props}
         />
     );
 };
