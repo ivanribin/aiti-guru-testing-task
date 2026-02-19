@@ -9,6 +9,7 @@ const DefaultLayout = ({ children }: PropsWithChildren): ReactElement => {
             <div className="default-layout">
                 <header className="default-layout">
                     <div className="header-main">
+                        <h2>Товары</h2>
                         <ProductsSearch />
                     </div>
                 </header>

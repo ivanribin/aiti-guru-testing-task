@@ -49,7 +49,7 @@ const ProductsPage = (): ReactElement => {
 
     return (
         <div className="products-page">
-            <h2>Products Page</h2>
+            <h2>Все позиции</h2>
             <ProductsTable
                 products={loadedProducts?.products}
                 isLoading={isLoading}

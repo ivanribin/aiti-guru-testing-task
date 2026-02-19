@@ -9,6 +9,7 @@ export interface IProduct {
     brand: string;
     category: string;
     thumbnail: string;
+    sku: string;
     images: string[];
 }
 

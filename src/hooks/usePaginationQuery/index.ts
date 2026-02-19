@@ -23,7 +23,7 @@ export type TUseListQueryHook<TArguments, TData> = (
     isUninitialized: boolean;
 };
 
-export const DEFAULT_LIST_ENTITIES_LIMIT: number = 20;
+export const DEFAULT_LIST_ENTITIES_LIMIT: number = 6;
 
 export interface IDefaultPaginationData {
     total: number;

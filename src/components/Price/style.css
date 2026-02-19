@@ -1,0 +1,16 @@
+.price {
+    align-items: baseline;
+    font-family: var(--font-family-base, sans-serif);
+}
+
+.price-integer {
+    font-weight: var(--font-weight-bold, 600);
+    color: var(--color-text-primary, #000000);
+}
+
+.price-fractional {
+    font-weight: var(--font-weight-regular, 400);
+    color: var(--color-text-tertiary, #999999);
+    font-size: 0.9em;
+    margin-left: 1px;
+}

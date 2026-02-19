@@ -8,11 +8,13 @@ import "./style.css";
 export interface IProductTableHeadWithSortProps {
     category: keyof IProduct;
     label: string;
+    className?: string;
 }
 
 const ProductTableHeadWithSort = ({
     category,
     label,
+    className = "",
 }: IProductTableHeadWithSortProps): ReactElement => {
     const dispatch = useDispatch();
 
@@ -33,7 +35,7 @@ const ProductTableHeadWithSort = ({
     return (
         <th
             onClick={onClick}
-            className={`product-table-head-with-sort ${activeClassName}`}
+            className={`product-table-head-with-sort ${activeClassName} ${className}`}
         >
             {label}
             {isActiveHead && sortOrder && (
