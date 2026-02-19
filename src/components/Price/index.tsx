@@ -13,9 +13,13 @@ const Price = ({ value, className = "" }: IPriceProps): ReactElement => {
 
     return (
         <span className={`price ${className}`}>
-            <span className="price-integer">{formattedInteger}</span>
+            <span className="price-integer number-text">
+                {formattedInteger}
+            </span>
             {fractionalPart && (
-                <span className="price-fractional">,{fractionalPart}</span>
+                <span className="price-fractional number-text-secondary">
+                    ,{fractionalPart}
+                </span>
             )}
         </span>
     );

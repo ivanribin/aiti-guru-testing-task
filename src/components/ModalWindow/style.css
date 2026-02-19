@@ -1,7 +1,7 @@
 .modal-overlay {
     position: fixed;
     inset: 0;
-    background-color: var(--color-overlay-background, rgba(0, 0, 0, 0.5));
+    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -9,16 +9,16 @@
 }
 
 .modal-content {
-    background-color: var(--color-surface-default);
-    padding: var(--space-2xl);
-    border-radius: var(--border-radius-md);
+    background-color: #FFFFFF;
+    padding: 2rem;
+    border-radius: 1rem;
     width: 90%;
-    max-width: var(--widget-max-width, 30rem);
-    max-height: var(--widget-max-width, 30rem);
+    max-width: 60rem;
+    max-height: 45rem;
     overflow-y: auto;
-    box-shadow: var(--shadow-default);
-    transition: transform var(--transition-default),
-        opacity var(--transition-default);
+    box-shadow: 0 0.063rem 0.188rem rgba(0, 0, 0, 0.15);;
+    transition: transform 350ms,
+        opacity 350ms;
     transform: translateY(0);
     opacity: 1;
     user-select: none;

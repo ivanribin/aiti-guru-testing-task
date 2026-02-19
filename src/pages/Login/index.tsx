@@ -24,7 +24,7 @@ const LoginPage = (): ReactElement => {
                 <p className="login-footer card-section-value">
                     <span className="caption-text-thin">{`Нет аккаунта?`}</span>
                     <Button
-                        className={`block-caption-primary-text ${ButtonTypes.GHOST}`}
+                        className={`block-caption-primary-text ${ButtonTypes.LINK}`}
                     >
                         Создать
                     </Button>

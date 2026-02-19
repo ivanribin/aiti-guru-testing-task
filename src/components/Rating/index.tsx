@@ -21,12 +21,12 @@ const Rating = ({
 
     if (!isBadRating) {
         return (
-            <span className="rating-wrapper">{`${rating}/${maxRating}`}</span>
+            <span className="rating-wrapper description-text-thin">{`${rating}/${maxRating}`}</span>
         );
     }
 
     return (
-        <span className="rating-wrapper">
+        <span className="rating-wrapper description-text-thin">
             <span className="rating bad">{rating}</span>
             <span className="max-rating">{`/${maxRating}`}</span>
         </span>

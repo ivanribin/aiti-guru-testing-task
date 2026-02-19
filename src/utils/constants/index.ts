@@ -38,6 +38,14 @@ export const DELAY_REDIRECT_TO_HOME: number = 5000;
 
 export const FIRST_SHEET_MODAL_Z_INDEX = 2;
 
+export const PRODUCTS_COUNT_ON_PAGE: number = 15;
+
 export const enum ButtonTypes {
+    LINK = "link",
     GHOST = "ghost",
+    OUTLINED = "outlined",
+}
+
+export const enum InputTypes {
+    SECONDARY = "secondary",
 }

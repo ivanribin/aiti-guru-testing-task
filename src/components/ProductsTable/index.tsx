@@ -53,7 +53,7 @@ const ProductsTable = ({
     }
 
     return (
-        <table className="products-table">
+        <table className="products-table" style={{ marginBottom: "2.2rem" }}>
             <thead>
                 <tr className="head-row">
                     <ProductTableHeadWithSort

@@ -1,6 +1,12 @@
 .products-table {
     width: 100%;
     table-layout: fixed;
+    border-collapse: collapse;
+}
+
+.products-table .head-row th {
+    padding: 1.5rem 1.1rem;
+    border-bottom: 0.15rem solid var(--secondary-text-color, #E0E0E0);
 }
 
 .col-title {

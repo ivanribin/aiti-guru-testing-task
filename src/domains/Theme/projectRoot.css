@@ -4,9 +4,11 @@
     --caption-text-color: #9C9C9C;
 
     --secondary-background-color: #EDEDED;
+    --input-secondary-background-color: #F3F3F3;
 
     --primary-color: #242EDB;
     --primary-border-color: #367AFF;
+    --error-color: #F11010;
 
     --main-background-color: #F6F6F6;
 }
@@ -15,6 +17,8 @@
 *::before,
 *::after {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 html,
@@ -30,4 +34,14 @@ body {
 .action-icon {
     width: 1.5rem;
     height: 1.5rem;
+}
+
+.label-icon {
+    width: 0.75rem;
+    height: 0.75rem;
+}
+
+.page {
+    background-color: #FFFFFF;
+    padding: 2rem;
 }

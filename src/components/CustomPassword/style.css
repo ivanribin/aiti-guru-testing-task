@@ -1,0 +1,14 @@
+.custom-password {
+    position: relative;
+}
+
+.custom-password .toggle-icon {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+}
+
+.custom-password .toggle-icon:hover {
+    cursor: pointer;
+}

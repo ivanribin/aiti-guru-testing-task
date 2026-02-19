@@ -13,26 +13,28 @@ const ProductTableRow = ({ product }: IProductTableRowProps): ReactElement => {
         <tr className="product-table-row">
             <td className="col-title product-table-row-cell product-table-row-cell-title">
                 <div className="product-table-row-title-wrapper">
-                    <img
-                        src={product.thumbnail}
-                        alt={product.title}
-                        className="product-table-row-thumbnail"
-                        loading="lazy"
-                    />
+                    <div className="product-table-row-thumbnail-wrapper">
+                        <img
+                            src={product.thumbnail}
+                            alt={product.title}
+                            className="product-table-row-thumbnail"
+                            loading="lazy"
+                        />
+                    </div>
                     <div className="product-table-row-title-info">
-                        <span className="product-table-row-title">
+                        <span className="product-table-row-title description-text-bold">
                             {product.title}
                         </span>
-                        <span className="product-table-row-category">
+                        <span className="product-table-row-category caption-text-thin">
                             {product.category}
                         </span>
                     </div>
                 </div>
             </td>
-            <td className="col-brand product-table-row-cell product-table-row-cell-brand">
+            <td className="col-brand product-table-row-cell product-table-row-cell-brand description-text-bold">
                 {product.brand}
             </td>
-            <td className="col-sku product-table-row-cell product-table-row-cell-sku">
+            <td className="col-sku product-table-row-cell product-table-row-cell-sku description-text-thin">
                 {product.sku}
             </td>
             <td className="col-rating product-table-row-cell product-table-row-cell-rating">
