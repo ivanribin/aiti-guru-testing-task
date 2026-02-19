@@ -1,8 +1,8 @@
 import AscendingIcon from "@assets/icons/ascending.svg?react";
 import DescendingIcon from "@assets/icons/descending.svg?react";
 import { SortOrders, updateSort } from "@store/slices/Products";
-import { useDispatch, useSelector } from "react-redux";
 import { ReactElement, MouseEvent, ReactNode } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { IProduct } from "@domains/Product";
 import { TRootState } from "@store/index";
 import "./style.css";
@@ -42,7 +42,7 @@ const ProductTableHeadWithSort = ({
     return (
         <th
             onClick={onClick}
-            className={`product-table-head-with-sort caption-text-bold ${activeClassName} ${className}`}
+            className={`product-table-head-with-sort description-text-thin-bold ${activeClassName} ${className}`}
         >
             <span className="head-label">{label}</span>
             {isActiveHead && sortOrder && (

@@ -18,7 +18,7 @@ type TProductsSearchQueryData = Partial<
     Pick<ILoadProductsPayload, "q" | "withSearch">
 >;
 
-const PRODUCTS_COUNT_ON_PAGE: number = 20;
+const PRODUCTS_COUNT_ON_PAGE: number = 15;
 
 const ProductsPage = (): ReactElement => {
     const [queryParams] = useSearchParams();

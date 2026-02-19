@@ -26,25 +26,16 @@
     font-style: normal;
 }
 
-.primary-text {
-    color: var(--color-text-primary, #000000) !important;
-    font-size: var(--font-size-md, 1rem) !important;
-    font-family: "Montserrat" !important;
-    font-weight: 600 !important;
-}
-
-.tertiary-text {
-    font-size: 1.1rem !important;
-    font-family: "Montserrat" !important;
-    font-weight: 600 !important;
+@font-face {
+    font-family: "Roboto-Mono";
+    src: url('@assets/fonts/Roboto-Mono/RobotoMono-Regular.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
 }
 
 html,
 body {
     overscroll-behavior: none;
-    font-family: "Montserrat";
-    font-weight: 300;
-    font-size: var(--font-size-vsm, 0.95rem);
 }
 
 h1 {
@@ -85,6 +76,33 @@ h3 {
     line-height: 150%;
     font-size: 1.1rem;
     color: var(--common-text-color, #232323);
+}
+
+.description-text-thin {
+    font-family: "Inter";
+    font-weight: 200;
+    letter-spacing: 0%;
+    line-height: 150%;
+    font-size: 1.1rem;
+    color: var(--common-text-color, #232323);
+}
+
+.description-text-bold {
+    font-family: "Inter";
+    font-weight: 700;
+    letter-spacing: 0%;
+    line-height: 150%;
+    font-size: 1.1rem;
+    color: var(--common-text-color, #232323);
+}
+
+.description-text-thin-bold {
+    font-family: "Inter";
+    font-weight: 700;
+    letter-spacing: 0%;
+    line-height: 150%;
+    font-size: 1.1rem;
+    color: var(--caption-text-color, #9C9C9C);
 }
 
 .description-text-primary {
@@ -129,5 +147,23 @@ h3 {
     letter-spacing: 0%;
     line-height: 150%;
     font-size: 1rem;
+    color: var(--caption-text-color, #9C9C9C);
+}
+
+.number-text {
+    font-family: "Roboto-Mono";
+    font-weight: 200;
+    letter-spacing: 0%;
+    line-height: 110%;
+    font-size: 1.1rem;
+    color: var(--common-text-color, #232323);
+}
+
+.number-text-secondary {
+    font-family: "Roboto-Mono";
+    font-weight: 200;
+    letter-spacing: 0%;
+    line-height: 110%;
+    font-size: 1.1rem;
     color: var(--caption-text-color, #9C9C9C);
 }
