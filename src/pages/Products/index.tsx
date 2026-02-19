@@ -3,8 +3,9 @@ import usePaginationQuery, {
 } from "@hooks/usePaginationQuery";
 import Paginator from "@components/Paginator";
 import ProductsTable from "@components/ProductsTable";
+import PaginationInfo from "@components/PaginationInfo";
 import { IProductsListData } from "@domains/Product";
-import { useMemo, type ReactElement } from "react";
+import { Fragment, useMemo, type ReactElement } from "react";
 import { ApiQueryParams } from "@utils/constants";
 import { useSearchParams } from "react-router";
 import {
@@ -15,6 +16,8 @@ import {
 type TProductsSearchQueryData = Partial<
     Pick<ILoadProductsPayload, "q" | "withSearch">
 >;
+
+const PRODUCTS_COUNT_ON_PAGE: number = 7;
 
 const ProductsPage = (): ReactElement => {
     const [queryParams] = useSearchParams();
@@ -37,15 +40,15 @@ const ProductsPage = (): ReactElement => {
         isLoading,
         isFetching,
         error,
-        packsCount,
         refetch,
         selectPackNumber,
+        total,
         selectedPackNumber,
     } = usePaginationQuery<
         TProductsSearchQueryData,
         IProductsListData,
         TUseListQueryHook<TProductsSearchQueryData, IProductsListData>
-    >(useLoadProductsQuery, queryArgs);
+    >(useLoadProductsQuery, queryArgs, PRODUCTS_COUNT_ON_PAGE);
 
     return (
         <div className="products-page">
@@ -57,12 +60,19 @@ const ProductsPage = (): ReactElement => {
                 error={error}
                 reset={refetch}
             />
-            {loadedProducts?.products.length && (
-                <Paginator
-                    selectedPack={selectedPackNumber}
-                    setPack={selectPackNumber}
-                    total={packsCount}
-                />
+            {loadedProducts?.products.length && total && (
+                <Fragment>
+                    <PaginationInfo
+                        selectedPack={selectedPackNumber}
+                        packItemsCount={PRODUCTS_COUNT_ON_PAGE}
+                        total={total}
+                    />
+                    <Paginator
+                        selectedPack={selectedPackNumber}
+                        setPack={selectPackNumber}
+                        total={total}
+                    />
+                </Fragment>
             )}
         </div>
     );
