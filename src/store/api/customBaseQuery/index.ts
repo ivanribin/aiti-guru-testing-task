@@ -1,7 +1,5 @@
 import API from "@api/index";
-import ServerResponseParser, {
-    IServerDataResponse,
-} from "@services/ServerResponseParser";
+import ServerResponseParser from "@services/ServerResponseParser";
 import { BaseQueryFn } from "@reduxjs/toolkit/query";
 import { type TApiMethods } from "@utils/constants";
 import { AxiosRequestConfig } from "axios";
@@ -23,11 +21,10 @@ const customBaseQuery: BaseQueryFn<
     CustomBaseQueryError
 > = async ({ url, method = "get", body, config }) => {
     try {
-        const serverResponse: IServerDataResponse<unknown> =
-            await API.authenticatedApiRequest<
-                IServerDataResponse<unknown>,
-                unknown
-            >(method, url, body, config);
+        const serverResponse: unknown = await API.authenticatedApiRequest<
+            unknown,
+            unknown
+        >(method, url, body, config);
 
         return { data: serverResponse };
     } catch (error: unknown) {

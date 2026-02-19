@@ -56,6 +56,9 @@
       "@services/*": [
         "src/services/*"
       ],
+      "@design-system/*": [
+        "src/design-system/*"
+      ],
       "@assets/*": [
         "src/assets/*"
       ],

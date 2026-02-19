@@ -9,6 +9,7 @@ export interface IProduct {
     brand: string;
     category: string;
     thumbnail: string;
+    sku: string;
     images: string[];
 }
 
@@ -18,3 +19,8 @@ export interface IProductsListData {
     skip: number;
     limit: number;
 }
+
+export type TCreateProductData = Pick<
+    IProduct,
+    "title" | "price" | "brand" | "sku"
+>;

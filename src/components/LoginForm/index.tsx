@@ -1,5 +1,10 @@
+import FormField from "@components/FormField";
+import LockIcon from "@assets/icons/lock.svg?react";
+import Alert, { AlertTypes } from "@components/Alert";
 import useNotifications from "@hooks/useNotifications";
-import FormField, { FormFieldClassnames } from "@components/FormField";
+import CustomPassword from "@components/CustomPassword";
+import InputWithTools from "@components/InputWithTools";
+import UserIcon from "@assets/icons/user-icon.svg?react";
 import { ChangeEvent, FormEvent, type ReactElement, useState } from "react";
 import type { TApplicationDispatch, TRootState } from "@store/index";
 import { Checkbox, CheckboxChangeEvent } from "primereact/checkbox";
@@ -8,9 +13,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { ISignInUserCredentials } from "@domains/User";
 import { signIn } from "@store/slices/User/thunks";
 import { AlertMessages } from "@utils/constants";
-import { InputText } from "primereact/inputtext";
-import { AlertTypes } from "@components/Alert";
-import { Password } from "primereact/password";
 import { useNavigate } from "react-router";
 import { Button } from "primereact/button";
 import { paths } from "@router/routes";
@@ -31,6 +33,8 @@ const LoginForm = (): ReactElement => {
     const { createAlert } = useNotifications();
 
     const [isRemember, setIsRemember] = useState<boolean>(true);
+
+    const [error, setError] = useState<string>("");
 
     const handleSubmit = async (event: FormEvent): Promise<void> => {
         event.preventDefault();
@@ -54,10 +58,7 @@ const LoginForm = (): ReactElement => {
         } catch (error: unknown) {
             const message = error as string;
 
-            createAlert({
-                message,
-                type: AlertTypes.ERROR,
-            });
+            setError(message);
         } finally {
             dispatch(setIsUserDataLoading(false));
         }
@@ -71,6 +72,12 @@ const LoginForm = (): ReactElement => {
             ...prevData,
             [fieldName]: event.target.value,
         }));
+
+        if (!error) {
+            return;
+        }
+
+        setError("");
     };
 
     const handleIsRememberChange = (event: CheckboxChangeEvent): void => {
@@ -83,55 +90,56 @@ const LoginForm = (): ReactElement => {
 
     return (
         <form className="username-form" onSubmit={handleSubmit}>
-            <FormField
-                className={`tertiary-text ${FormFieldClassnames.AUTHORIZATION}`}
-                label="Email or username"
-            >
-                <InputText
+            <FormField label="Логин">
+                <InputWithTools
+                    Icon={UserIcon}
                     value={formData.username ?? ""}
-                    className={`form-field-input tertiary-text`}
-                    onChange={(event) =>
-                        handleFormDataChange(event, "username")
-                    }
-                    placeholder="Enter your email or username"
-                    type="text"
+                    className={`form-field-input form-input description-text`}
+                    onChange={(newUsername) => {
+                        setFormData((prevData) => ({
+                            ...prevData,
+                            ["username"]: newUsername,
+                        }));
+                    }}
+                    placeholder="Введите свой логин"
                     required
                 />
             </FormField>
-
-            <FormField
-                className={`tertiary-text ${FormFieldClassnames.AUTHORIZATION}`}
-                label="Password"
-            >
-                <Password
+            <FormField label="Пароль" styles={{ marginBottom: "1.2rem" }}>
+                <CustomPassword
                     value={formData.password ?? ""}
-                    className="form-field-input"
+                    className="form-field-input form-input"
                     onChange={(event) =>
                         handleFormDataChange(event, "password")
                     }
-                    placeholder="Enter your password"
+                    placeholder="Введите свой пароль"
+                    Icon={LockIcon}
                     required
                 />
             </FormField>
+            {error && <Alert type={AlertTypes.ERROR} message={error} />}
             <div
                 className="form-row"
                 style={{
                     display: "flex",
                     justifyContent: "start",
+                    alignItems: "center",
                     marginBottom: "2rem",
+                    gap: "0.5rem",
                 }}
             >
                 <Checkbox
                     checked={isRemember}
                     onChange={handleIsRememberChange}
                 />
+                <span className="caption-text">Запомнить данные</span>
             </div>
             <Button
-                className="tertiary-text"
-                label="Login"
+                label="Войти"
                 type="submit"
                 disabled={isSomeFieldEmpty}
                 loading={isUserDataLoading}
+                style={{ width: "100%" }}
             />
         </form>
     );

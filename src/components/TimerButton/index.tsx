@@ -1,6 +1,6 @@
 import Timer from "@components/Timer";
 import { useState, type ReactElement } from "react";
-import "./style.css";
+import { Button } from "primereact/button";
 
 export interface ITimerButton {
     label: string;
@@ -32,7 +32,7 @@ const TimerButton = ({
     };
 
     return (
-        <button
+        <Button
             onClick={handleClick}
             disabled={isDisabled}
             className="timer-button"
@@ -45,7 +45,7 @@ const TimerButton = ({
                     handleTimerCompletion={removeDisabled}
                 />
             )}
-        </button>
+        </Button>
     );
 };
 

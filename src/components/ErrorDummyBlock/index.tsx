@@ -35,8 +35,10 @@ const ErrorDummyBlock = ({
             </div>
 
             <div className="error-block-info">
-                <h1 className="error-block-title bold-text">{title}</h1>
-                <span className="error-block-description">{description}</span>
+                <h2 className="error-block-title">{title}</h2>
+                <span className="error-block-description description-text-secondary-thin">
+                    {description}
+                </span>
             </div>
 
             <TimerButton

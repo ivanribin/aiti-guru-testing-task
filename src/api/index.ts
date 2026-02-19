@@ -1,9 +1,8 @@
 import { ApiEndpoints, apiStatuses, type TApiMethods } from "@utils/constants";
-import { IServerAuthorizationResponse } from "@services/ServerResponseParser";
 import { AxiosError, AxiosResponse, type AxiosRequestConfig } from "axios";
 import { authTokenStore } from "@services/AuthTokensStore";
-import { axiosApi } from "./axiosConfig";
 import { IUserSession } from "@domains/User";
+import { axiosApi } from "./axiosConfig";
 
 class API {
     public static async apiRequest<TResponse, TBody>(

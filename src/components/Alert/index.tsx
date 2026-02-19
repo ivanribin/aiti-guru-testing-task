@@ -52,7 +52,7 @@ const Alert = ({
                 )}
                 {!!icon && <Fragment>{icon}</Fragment>}
             </span>
-            <span className={`alert-message`}>{message}</span>
+            <span className={`alert-message description-text`}>{message}</span>
             {onClose && (
                 <button
                     className={`alert-close`}

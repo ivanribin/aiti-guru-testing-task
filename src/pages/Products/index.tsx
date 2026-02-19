@@ -1,16 +1,19 @@
-import Paginator from "@components/Paginator";
-import ProductsTable from "@components/ProductsTable";
-import { IProductsListData } from "@domains/Product";
 import usePaginationQuery, {
     TUseListQueryHook,
 } from "@hooks/usePaginationQuery";
+import Paginator from "@components/Paginator";
+import ProductsTable from "@components/ProductsTable";
+import PaginationInfo from "@components/PaginationInfo";
+import ProductsPageHeader from "@components/ProductsPageHeader";
+import { ApiQueryParams, PRODUCTS_COUNT_ON_PAGE } from "@utils/constants";
+import { IProductsListData } from "@domains/Product";
+import { useMemo, type ReactElement } from "react";
+import { useSearchParams } from "react-router";
 import {
     ILoadProductsPayload,
     useLoadProductsQuery,
 } from "@store/api/Products";
-import { ApiQueryParams } from "@utils/constants";
-import { useMemo, type ReactElement } from "react";
-import { useSearchParams } from "react-router";
+import "./style.css";
 
 type TProductsSearchQueryData = Partial<
     Pick<ILoadProductsPayload, "q" | "withSearch">
@@ -37,19 +40,23 @@ const ProductsPage = (): ReactElement => {
         isLoading,
         isFetching,
         error,
-        packsCount,
         refetch,
         selectPackNumber,
+        packsCount,
+        total,
         selectedPackNumber,
     } = usePaginationQuery<
         TProductsSearchQueryData,
         IProductsListData,
         TUseListQueryHook<TProductsSearchQueryData, IProductsListData>
-    >(useLoadProductsQuery, queryArgs);
+    >(useLoadProductsQuery, queryArgs, PRODUCTS_COUNT_ON_PAGE);
 
     return (
-        <div className="products-page">
-            <h2>Products Page</h2>
+        <div className="products-page page">
+            <ProductsPageHeader
+                refetchProducts={refetch}
+                isLoading={isLoading || isFetching}
+            />
             <ProductsTable
                 products={loadedProducts?.products}
                 isLoading={isLoading}
@@ -57,12 +64,19 @@ const ProductsPage = (): ReactElement => {
                 error={error}
                 reset={refetch}
             />
-            {loadedProducts?.products.length && (
-                <Paginator
-                    selectedPack={selectedPackNumber}
-                    setPack={selectPackNumber}
-                    total={packsCount}
-                />
+            {loadedProducts?.products.length && total && (
+                <div className="products-page-pagination-block">
+                    <PaginationInfo
+                        selectedPack={selectedPackNumber}
+                        packItemsCount={PRODUCTS_COUNT_ON_PAGE}
+                        total={total}
+                    />
+                    <Paginator
+                        selectedPack={selectedPackNumber}
+                        setPack={selectPackNumber}
+                        total={packsCount}
+                    />
+                </div>
             )}
         </div>
     );

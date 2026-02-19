@@ -1,0 +1,120 @@
+.design-system-input {
+    background-color: transparent;
+    padding: 0.9rem 1rem;
+    border-radius: 0.8rem;
+    border-color: gray;
+    outline: none;
+    background-image: none !important;
+    box-shadow: none !important;
+}
+
+.design-system-input.secondary {
+    background-color: var(--input-secondary-background-color, #F3F3F3);
+    padding: 0.9rem 1rem;
+    border: none;
+    outline: none;
+    background-image: none !important;
+    box-shadow: none !important;
+}
+
+.design-system-password-root {
+    padding: 0;
+}
+
+.design-system-password-root input {
+    width: 100%;
+    padding: 0.9rem 1rem;
+}
+
+.design-system-hidden {
+    display: none !important;
+}
+
+.design-system-checkbox-root {
+    padding: 0.2rem;
+}
+
+.design-system-checkbox-input {
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 0.15rem solid var(--secondary-text-color, #E0E0E0);
+}
+
+.design-system-checkbox-input:hover {
+    cursor: pointer;
+}
+
+.design-system-checkbox-input[type="checkbox"]:checked {
+    accent-color: var(--primary-color, #242EDB);
+}
+
+.design-system-button {
+    background-color: var(--primary-color, #242EDB);
+    border: 0.1rem solid var(--primary-border-color, #367AFF);
+    border-radius: 0.75rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.design-system-button:hover {
+    cursor: pointer;
+}
+
+.design-system-button:disabled {
+    filter: brightness(0.8);
+    cursor: not-allowed;
+}
+
+.design-system-button.link {
+    background-color: transparent;
+    color: var(--primary-color, #242EDB);
+    border: none;
+    padding: 0;
+    line-height: 130%;
+    text-decoration: underline;
+}
+
+.design-system-button.outlined {
+    background-color: transparent;
+    color: var(--caption-text-color, #9C9C9C);
+    border-color: var(--caption-text-color, #9C9C9C);
+}
+
+.design-system-button.ghost {
+    background-color: transparent;
+    color: var(--caption-text-color, #9C9C9C);
+    border: none;
+    padding: 0;
+}
+
+.design-system-progressspinner {
+    width: 2.5rem;
+    height: 2.5rem;
+    animation: spin 1s linear infinite;
+}
+
+.design-system-progressspinner-spinner {
+    width: 100%;
+    height: 100%;
+}
+
+.design-system-progressspinner-circle {
+    stroke: var(--primary-color, #242EDB);
+    stroke-width: 0.125rem;
+    stroke-linecap: round;
+    fill: transparent;
+    stroke-dasharray: 4rem;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes spinner-rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

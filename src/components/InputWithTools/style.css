@@ -1,0 +1,16 @@
+.input-with-tools {
+    position: relative;
+}
+
+.input-with-tools .clear-icon {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    width: 1rem;
+    height: 1rem;
+}
+
+.input-with-tools .clear-icon:hover {
+    cursor: pointer;
+}

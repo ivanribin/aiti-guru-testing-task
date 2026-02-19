@@ -18,9 +18,7 @@
 
 .form-field-content {
     width: 100%;
-    overflow-x: auto;
     text-align: start;
-    padding-bottom: var(--space-s);
 }
 
 .form-field.auth {

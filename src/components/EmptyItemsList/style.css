@@ -2,14 +2,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: var(--space-lg);
+    gap: 1rem;
 
-    margin-bottom: var(--space-3xl);
-}
-
-.empty-list-image-wrapper {
-    width: calc(var(--ui-element-lsmall-width) + var(--icon-size-xxxml));
-    height: var(--ui-element-medium-height);
+    margin-bottom: 1.5rem;
 }
 
 .empty-items-list .empty-icon {
@@ -21,17 +16,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: var(--space-lg);
-    margin-top: var(--space-lg);
+    gap: 1rem;
+    margin-top: 1rem;
 
-    color: var(--color-text-darkened);
     opacity: 0.5;
-}
-
-.empty-list-title {
-    font-size: var(--font-size-g) !important;
-}
-
-.empty-list-description {
-    font-size: var(--font-size-sm);
 }

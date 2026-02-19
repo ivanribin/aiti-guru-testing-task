@@ -23,7 +23,7 @@ export type TUseListQueryHook<TArguments, TData> = (
     isUninitialized: boolean;
 };
 
-export const DEFAULT_LIST_ENTITIES_LIMIT: number = 4;
+export const DEFAULT_LIST_ENTITIES_LIMIT: number = 6;
 
 export interface IDefaultPaginationData {
     total: number;
@@ -110,6 +110,7 @@ const usePaginationQuery = <
         isFetching,
         reset,
         refetch,
+        total: data?.total,
         selectedPackNumber,
         selectPackNumber: setSelectedPackNumber,
         packsCount,
