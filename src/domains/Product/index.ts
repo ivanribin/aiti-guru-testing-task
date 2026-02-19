@@ -19,3 +19,8 @@ export interface IProductsListData {
     skip: number;
     limit: number;
 }
+
+export type TCreateProductData = Pick<
+    IProduct,
+    "title" | "price" | "brand" | "sku"
+>;

@@ -1,0 +1,25 @@
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: var(--color-overlay-background, rgba(0, 0, 0, 0.5));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.modal-content {
+    background-color: var(--color-surface-default);
+    padding: var(--space-2xl);
+    border-radius: var(--border-radius-md);
+    width: 90%;
+    max-width: var(--widget-max-width, 30rem);
+    max-height: var(--widget-max-width, 30rem);
+    overflow-y: auto;
+    box-shadow: var(--shadow-default);
+    transition: transform var(--transition-default),
+        opacity var(--transition-default);
+    transform: translateY(0);
+    opacity: 1;
+    user-select: none;
+}
