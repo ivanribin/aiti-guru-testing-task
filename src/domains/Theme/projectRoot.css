@@ -34,3 +34,8 @@ body {
     width: 1.5rem;
     height: 1.5rem;
 }
+
+.page {
+    background-color: #FFFFFF;
+    padding: 2rem;
+}

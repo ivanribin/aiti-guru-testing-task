@@ -53,7 +53,7 @@ const ProductsPage = (): ReactElement => {
     >(useLoadProductsQuery, queryArgs, PRODUCTS_COUNT_ON_PAGE);
 
     return (
-        <div className="products-page">
+        <div className="products-page page">
             <ProductsPageHeader
                 refetchProducts={refetch}
                 isLoading={isLoading || isFetching}

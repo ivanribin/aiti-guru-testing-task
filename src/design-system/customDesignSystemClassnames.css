@@ -71,3 +71,9 @@
     line-height: 130%;
     text-decoration: underline;
 }
+
+.design-system-button.outlined {
+    background-color: transparent;
+    color: var(--caption-text-color, #9C9C9C);
+    border-color: var(--caption-text-color, #9C9C9C);
+}

@@ -1,0 +1,16 @@
+.products-page-header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.5rem;
+}
+
+.products-page-header .products-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.products-page-header .products-actions button {
+    padding: 0.6rem 1rem;
+}

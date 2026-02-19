@@ -40,6 +40,7 @@ export const FIRST_SHEET_MODAL_Z_INDEX = 2;
 
 export const enum ButtonTypes {
     GHOST = "ghost",
+    OUTLINED = "outlined",
 }
 
 export const enum InputTypes {
