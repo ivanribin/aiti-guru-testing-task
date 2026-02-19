@@ -1,10 +1,12 @@
+import EmptyItemsList from "@components/EmptyItemsList";
 import ErrorDummyBlock from "@components/ErrorDummyBlock";
 import emptyIcon from "@assets/icons/empty-list.svg?react";
+import useProductsSorting from "@hooks/useProductsSorting";
 import errorIcon from "@assets/icons/search-error.svg?react";
+import ProductsTableSkeleton from "@components/ProductsTableSkeleton";
+import ProductTableHeadWithSort from "@components/ProductTableHeadWithSort";
 import { IProduct } from "@domains/Product";
 import { ReactElement } from "react";
-import EmptyItemsList from "@components/EmptyItemsList";
-import ProductsTableSkeleton from "@components/ProductsTableSkeleton";
 
 export interface IProductsTableProps {
     isLoading?: boolean;
@@ -21,6 +23,8 @@ const ProductsTable = ({
     reset,
     products,
 }: IProductsTableProps): ReactElement => {
+    const sortedProducts = useProductsSorting(products);
+
     if (isLoading || isFetching) {
         return <ProductsTableSkeleton />;
     }
@@ -36,7 +40,7 @@ const ProductsTable = ({
         );
     }
 
-    if (!products || !products.length) {
+    if (!sortedProducts || !sortedProducts.length) {
         return (
             <EmptyItemsList
                 Icon={emptyIcon}
@@ -50,16 +54,25 @@ const ProductsTable = ({
         <table className="products-table entities-table">
             <thead>
                 <tr className="head-row">
-                    <th>{`Наименование`}</th>
-                    <th>{`Вендор`}</th>
-                    <th>{`Оценка`}</th>
-                    <th>{`Цена`}</th>
+                    <ProductTableHeadWithSort
+                        category={"title"}
+                        label="Наименование"
+                    />
+                    <ProductTableHeadWithSort
+                        category={"brand"}
+                        label="Вендор"
+                    />
+                    <ProductTableHeadWithSort
+                        category={"rating"}
+                        label="Оценка"
+                    />
+                    <ProductTableHeadWithSort category={"price"} label="Цена" />
                 </tr>
             </thead>
             <tbody>
-                {products.map((product: IProduct) => (
+                {sortedProducts.map((product: IProduct) => (
                     <tr className="bold-text" key={product.id}>
-                        {JSON.stringify(product)}
+                        {<span>{`${JSON.stringify(product.price)}`}</span>}
                     </tr>
                 ))}
             </tbody>

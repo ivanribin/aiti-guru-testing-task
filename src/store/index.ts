@@ -1,4 +1,5 @@
 import UserSlice from "@store/slices/User";
+import ProductsSlice from "@store/slices/Products";
 import ApplicationSlice from "@store/slices/Application";
 import NotificationSlice from "@store/slices/Notifications";
 import { configureStore, Middleware } from "@reduxjs/toolkit";
@@ -9,6 +10,7 @@ const store = configureStore({
         application: ApplicationSlice,
         notifications: NotificationSlice,
         user: UserSlice,
+        products: ProductsSlice,
         [productsApi.reducerPath]: productsApi.reducer,
     },
     middleware: (getDefaultMiddleware) =>

@@ -1,16 +1,16 @@
-import Paginator from "@components/Paginator";
-import ProductsTable from "@components/ProductsTable";
-import { IProductsListData } from "@domains/Product";
 import usePaginationQuery, {
     TUseListQueryHook,
 } from "@hooks/usePaginationQuery";
+import Paginator from "@components/Paginator";
+import ProductsTable from "@components/ProductsTable";
+import { IProductsListData } from "@domains/Product";
+import { useMemo, type ReactElement } from "react";
+import { ApiQueryParams } from "@utils/constants";
+import { useSearchParams } from "react-router";
 import {
     ILoadProductsPayload,
     useLoadProductsQuery,
 } from "@store/api/Products";
-import { ApiQueryParams } from "@utils/constants";
-import { useMemo, type ReactElement } from "react";
-import { useSearchParams } from "react-router";
 
 type TProductsSearchQueryData = Partial<
     Pick<ILoadProductsPayload, "q" | "withSearch">

@@ -46,7 +46,7 @@ const Paginator = ({
     }, [currentPacksGroup, total, visibleCount]);
 
     return (
-        <button className="paginator">
+        <div className="paginator">
             <Button
                 onClick={() => setPack(selectedPack - 1)}
                 disabled={selectedPack === 1}
@@ -71,7 +71,7 @@ const Paginator = ({
             >
                 <LeftArrowIcon style={{ transform: "rotate(180deg)" }} />
             </Button>
-        </button>
+        </div>
     );
 };
 
