@@ -110,6 +110,7 @@ const usePaginationQuery = <
         isFetching,
         reset,
         refetch,
+        total: data?.total,
         selectedPackNumber,
         selectPackNumber: setSelectedPackNumber,
         packsCount,
